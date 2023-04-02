@@ -1,0 +1,21 @@
+﻿<h1>Metodo POST con Ajax</h1>
+
+<label>Numero:</label>
+<input class="form-control" name="numero" id="numero" type="number" />
+<button class="btn btn-primary" id="btnCalcular">Calcular</button>
+<p id="resultado" style="color:green;"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnCalcular").click(function () {
+            var numero = $("#numero").val();
+            var data = { numero: numero }
+            var url = "@Url.Action("GetDoble","Ajax")"
+
+            $.post(url,data).done(function(data){
+                $("#resultado").text(data)
+            })
+        })
+    })
+</script>
