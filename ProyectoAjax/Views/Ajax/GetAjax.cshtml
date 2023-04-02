@@ -8,7 +8,7 @@
         $("#btnCargar").click(function () {
             var url = "@Url.Action("LoadDartos","Ajax")"
 
-            $.post(url).done(function(data){
+            $.get(url).done(function(data){
                 $("#resultado").text(data)
             })
         })

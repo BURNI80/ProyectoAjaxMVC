@@ -10,7 +10,7 @@
     $(document).ready(function () {
         $("#btnCalcular").click(function () {
             var numero = $("#numero").val();
-            var data = { numero: numero }
+            var data = { numero: numero}
             var url = "@Url.Action("GetDoble","Ajax")"
 
             $.post(url,data).done(function(data){
